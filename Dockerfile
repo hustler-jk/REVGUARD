@@ -11,7 +11,9 @@ FROM python:3.11-slim
 WORKDIR /app
 
 ENV PYTHONUNBUFFERED=1 \
+    PYTHONPATH=/app/backend \
     PORT=8000 \
+    HOST=0.0.0.0 \
     ENVIRONMENT=production
 
 # Install system dependencies

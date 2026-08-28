@@ -2,7 +2,7 @@ services:
   - type: web
     name: revguard-platform
     runtime: docker
-    plan: standard
+    plan: free
     envVars:
       - key: PORT
         value: 8000
@@ -10,3 +10,4 @@ services:
         value: production
       - key: PROJECT_NAME
         value: "REVGUARD Enterprise"
+
