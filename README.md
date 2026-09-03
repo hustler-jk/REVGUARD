@@ -43,7 +43,8 @@ Open **[http://localhost:8000](http://localhost:8000)** in your browser.
 
 ---
 
-## 4. PostgreSQL & pgAdmin Setup (Optional)
+## 4. PostgreSQL & pgAdmin Setup (
+
 By default, REVGUARD seamlessly runs on a local SQLite database for instant zero-config testing. To connect your local PostgreSQL 18 instance:
 
 1. Open **pgAdmin 4**.
@@ -56,21 +57,3 @@ By default, REVGUARD seamlessly runs on a local SQLite database for instant zero
 
 ---
 
-## 5. The 6 Lean Tables Architecture
-1. `customers`: Customer profiles, ARR, Churn Probability, 90-Day Revenue at Risk (Layer D), SHAP feature factors.
-2. `contracts`: Contract terms, committed ARR, milestone schedules.
-3. `orders_canonical`: Unified order, invoice, payment, refund, discount, and employee transaction records.
-4. `root_causes`: Clustered root causes, total exposures, early-warning slope timelines, and immunization rules.
-5. `revenue_cases`: Validated cases with JSON columns for polymorphic evidence, risk breakdown, immunization, and graph payloads.
-6. `audit_logs`: SHA-256 cryptographically chained log with tamper-detection verification.
-
----
-
-## 6. Judge Attack Q&A Cheat Sheet
-
-- **"Why can't an ERP or Stripe already do this?"**
-  &rarr; *They optimize their own silos. We correlate across the full customer-to-cash lifecycle AND cluster cases by shared root causes with attached immunization controls.*
-- **"How do you calculate recoverable revenue?"**
-  &rarr; *Expected Recovery = Financial Exposure × Recovery Probability (deterministic matrix lookup).*
-- **"Is this real-time?"**
-  &rarr; *The rule engine runs in real-time on ingest (§7.7); ML anomaly scoring and churn run near-real-time.*
